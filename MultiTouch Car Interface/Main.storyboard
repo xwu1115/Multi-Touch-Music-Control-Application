@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Sgr-10-dqs">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Music-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="music" id="BYZ-38-t0r" customClass="MusicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gRL-Cn-oi0"/>
+                        <viewControllerLayoutGuide type="bottom" id="U2q-DR-gS0"/>
+                    </layoutGuides>
+                    <view key="view" autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="music" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxJ-jE-vQJ">
+                                <rect key="frame" x="0.0" y="708" width="1024" height="60"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="fig-wz-k5O">
+                                <rect key="frame" x="0.0" y="560" width="1024" height="218"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music-icon3_on.png" translatesAutoresizingMaskIntoConstraints="NO" id="e0z-cN-RvQ">
+                                <rect key="frame" x="73" y="578" width="120" height="120"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fm-4u-Pi5" userLabel="VolumeIconView">
+                                <rect key="frame" x="240" y="594" width="121" height="107"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="volume-icon_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="r9L-mo-YJ1">
+                                        <rect key="frame" x="22" y="10" width="77" height="77"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ3-QA-Ptg">
+                                        <rect key="frame" x="32" y="86" width="57" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRX-1o-bsD" userLabel="SongIconView">
+                                <rect key="frame" x="400" y="594" width="121" height="107"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="song-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="3BO-tR-q5l">
+                                        <rect key="frame" x="20" y="10" width="77" height="77"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFm-pk-jaH">
+                                        <rect key="frame" x="25" y="86" width="67" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fP-Ut-47b" userLabel="RadioIconView">
+                                <rect key="frame" x="560" y="594" width="121" height="107"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="radio-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="g2e-TV-aIL">
+                                        <rect key="frame" x="20" y="10" width="77" height="77"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Radio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-M9-f5c">
+                                        <rect key="frame" x="25" y="87" width="67" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Music" id="NYA-z2-Nee"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="VolumeIcon" destination="8fm-4u-Pi5" id="1Nx-RP-Fce"/>
+                        <outlet property="musicMenuIcon" destination="e0z-cN-RvQ" id="M1v-ms-3nT"/>
+                        <outlet property="radioIcon" destination="1fP-Ut-47b" id="fLM-Jn-yGy"/>
+                        <outlet property="songIcon" destination="WRX-1o-bsD" id="kKR-6h-D4o"/>
+                        <outlet property="volumeIcon" destination="8fm-4u-Pi5" id="Ujb-B6-11f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="-3486"/>
+        </scene>
+        <!--Navigation-->
+        <scene sceneID="FUB-fS-8Nh">
+            <objects>
+                <viewController storyboardIdentifier="navi" id="awZ-qu-VCP" customClass="NaviViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ITP-4p-5td"/>
+                        <viewControllerLayoutGuide type="bottom" id="8FI-Ef-XHg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RHB-Lg-WcC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xty-kM-PQ8" userLabel="mapLocationView">
+                                <rect key="frame" x="-1042" y="40" width="940" height="500"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f07-lm-PEt">
+                                        <rect key="frame" x="0.0" y="0.0" width="940" height="500"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7FW-Vm-3Eo">
+                                                <rect key="frame" x="-13" y="0.0" width="953" height="500"/>
+                                            </mapView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ciq-pL-8Km">
+                                                <rect key="frame" x="0.0" y="283" width="940" height="250"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bww-RL-KML">
+                                                        <rect key="frame" x="239" y="85" width="408" height="115"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="75"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Current Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcl-WF-KO3">
+                                                        <rect key="frame" x="244" y="20" width="399" height="63"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="navi_rev.png" translatesAutoresizingMaskIntoConstraints="NO" id="lFK-K0-lU1">
+                                                        <rect key="frame" x="51" y="28" width="162" height="162"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="VGZ-ss-RaC">
+                                <rect key="frame" x="0.0" y="560" width="1024" height="218"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b0f-ea-z6F" userLabel="addRouteView">
+                                <rect key="frame" x="42" y="40" width="940" height="500"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LBQ-jz-P0V">
+                                        <rect key="frame" x="0.0" y="0.0" width="940" height="500"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aX-fp-JrY" userLabel="deleteRouteView">
+                                <rect key="frame" x="1042" y="40" width="940" height="500"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFW-kQ-vzO">
+                                        <rect key="frame" x="0.0" y="0.0" width="940" height="500"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music-icon3_on.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Qx-fo-jew">
+                                <rect key="frame" x="74" y="579" width="118" height="118"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="8KM-Mf-3dH">
+                                <rect key="frame" x="73" y="578" width="120" height="120"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1JO-14-hFo" userLabel="addIconView">
+                                <rect key="frame" x="400" y="594" width="121" height="107"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_location-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-mh-EbI">
+                                        <rect key="frame" x="22" y="10" width="77" height="77"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Route" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-pZ-wCD">
+                                        <rect key="frame" x="19" y="86" width="82" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dx6-hM-v58" userLabel="deleteIconView">
+                                <rect key="frame" x="560" y="594" width="121" height="107"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="delete_location.png" translatesAutoresizingMaskIntoConstraints="NO" id="67T-TT-Swb">
+                                        <rect key="frame" x="22" y="10" width="77" height="77"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delete Route" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl1-iz-wBL">
+                                        <rect key="frame" x="10" y="86" width="100" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtG-KK-JdB" userLabel="locationIconView">
+                                <rect key="frame" x="240" y="594" width="121" height="107"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="navi-icon_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ul-bw-ygg">
+                                        <rect key="frame" x="22" y="10" width="77" height="77"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKj-fs-IUh">
+                                        <rect key="frame" x="27" y="86" width="67" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Navigation" id="BON-x2-Qqj"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="addIcon" destination="1JO-14-hFo" id="mic-pU-YBx"/>
+                        <outlet property="addRouteView" destination="b0f-ea-z6F" id="rsb-GP-QlM"/>
+                        <outlet property="addressLabel" destination="Bww-RL-KML" id="erd-ec-8kO"/>
+                        <outlet property="currentLocationView" destination="xty-kM-PQ8" id="Pxm-6E-re1"/>
+                        <outlet property="deleteIcon" destination="Dx6-hM-v58" id="Jsp-rv-3go"/>
+                        <outlet property="deleteRouteView" destination="2aX-fp-JrY" id="wGg-Gu-fzp"/>
+                        <outlet property="locationIcon" destination="JtG-KK-JdB" id="c5G-Xx-yr5"/>
+                        <outlet property="mapView" destination="7FW-Vm-3Eo" id="4ME-rO-erm"/>
+                        <outlet property="menuImageIcon" destination="8KM-Mf-3dH" id="gtC-Cm-a01"/>
+                        <outlet property="roundCornerView" destination="f07-lm-PEt" id="K4E-VJ-0US"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P5S-9v-50E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="-1612"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="fJW-f7-0QK">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Sgr-10-dqs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="hWh-hs-Agt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2Xe-A8-TU8"/>
+                        <segue destination="awZ-qu-VCP" kind="relationship" relationship="viewControllers" id="6eF-nQ-vBM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vLA-zk-egB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1008" y="-2574"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add_location-icon.png" width="382" height="382"/>
+        <image name="delete_location.png" width="382" height="382"/>
+        <image name="gradient_bottom.png" width="1024" height="300"/>
+        <image name="map-icon.png" width="300" height="300"/>
+        <image name="music-icon3_on.png" width="300" height="300"/>
+        <image name="navi-icon_2.png" width="382" height="382"/>
+        <image name="navi_rev.png" width="350" height="350"/>
+        <image name="radio-icon.png" width="382" height="382"/>
+        <image name="song-icon.png" width="382" height="382"/>
+        <image name="volume-icon_1.png" width="382" height="382"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

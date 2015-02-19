@@ -1,0 +1,792 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0003BB5118C84B78005BD464 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0003BB5018C84B78005BD464 /* AVFoundation.framework */; };
+		0003BB5518C84CED005BD464 /* Music Control.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0003BB5418C84CED005BD464 /* Music Control.mp3 */; };
+		0003BB5718C84E62005BD464 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0003BB5618C84E62005BD464 /* AudioToolbox.framework */; };
+		00069B44192E9DCF00707E95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00069B43192E9DCF00707E95 /* Main.storyboard */; };
+		000BDADF18C964F5003AE3FD /* MusicSourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 000BDADE18C964F5003AE3FD /* MusicSourceView.m */; };
+		000BDAE418C971F1003AE3FD /* source.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 000BDAE218C971F1003AE3FD /* source.mp3 */; };
+		000BDAE518C971F1003AE3FD /* volume.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 000BDAE318C971F1003AE3FD /* volume.mp3 */; };
+		000BDAFA18D20D0A003AE3FD /* NaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000BDAF918D20D0A003AE3FD /* NaviViewController.m */; };
+		000BDB0018D24E41003AE3FD /* music_volume.png in Resources */ = {isa = PBXBuildFile; fileRef = 000BDAFF18D24E41003AE3FD /* music_volume.png */; };
+		001122851933A58000E18F19 /* music-icon_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 001122841933A58000E18F19 /* music-icon_on_2.png */; };
+		001122871933B05700E18F19 /* volume-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 001122861933B05700E18F19 /* volume-icon.png */; };
+		001122891933B10700E18F19 /* volume-icon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 001122881933B10700E18F19 /* volume-icon_1.png */; };
+		0011228B1933B3CE00E18F19 /* song-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0011228A1933B3CE00E18F19 /* song-icon.png */; };
+		0011228D1933B59E00E18F19 /* music-icon3_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0011228C1933B59E00E18F19 /* music-icon3_on.png */; };
+		0011228F1933CEE400E18F19 /* radio-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0011228E1933CEE400E18F19 /* radio-icon.png */; };
+		0031704D18D93CEB00138EDC /* volume_rev_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031704C18D93CEB00138EDC /* volume_rev_2.png */; };
+		0031705018D9486A00138EDC /* DrawViewForVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031704F18D9486A00138EDC /* DrawViewForVolume.m */; };
+		0031705218D954A100138EDC /* album2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0031705118D954A100138EDC /* album2.jpg */; };
+		0031705418D954AA00138EDC /* album1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0031705318D954AA00138EDC /* album1.jpg */; };
+		0031705618D9557500138EDC /* album3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0031705518D9557500138EDC /* album3.jpg */; };
+		00417EA718F6562900A39714 /* ItunesLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00417EA618F6562900A39714 /* ItunesLibraryController.m */; };
+		00417EAA18F65B7D00A39714 /* ItunesSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00417EA918F65B7D00A39714 /* ItunesSelectViewController.m */; };
+		00417EAC18F662C100A39714 /* ItunesPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00417EAB18F662C100A39714 /* ItunesPrefs.plist */; };
+		004FB95D18C9056000DE113C /* music-icon1 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 004FB95C18C9056000DE113C /* music-icon1 copy.png */; };
+		004FB96118C9060E00DE113C /* music-icon2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 004FB96018C9060E00DE113C /* music-icon2 copy.png */; };
+		0050969C19361BE200C3ADB7 /* radioWave.png in Resources */ = {isa = PBXBuildFile; fileRef = 0050969B19361BE200C3ADB7 /* radioWave.png */; };
+		0054839118E537020017F37C /* drawProcessViewForSongControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0054839018E537020017F37C /* drawProcessViewForSongControl.m */; };
+		0083622418D2A55F00BD1285 /* ProcessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083622318D2A55F00BD1285 /* ProcessView.m */; };
+		0083622618D2D32100BD1285 /* blur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0083622518D2D32100BD1285 /* blur.jpg */; };
+		0083622818D2D6AB00BD1285 /* blur_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0083622718D2D6AB00BD1285 /* blur_1.jpg */; };
+		0083622A18D2D79900BD1285 /* blur_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0083622918D2D79900BD1285 /* blur_2.jpg */; };
+		0083622D18D3F38900BD1285 /* TabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083622C18D3F38900BD1285 /* TabBarView.m */; };
+		0083622F18D4045500BD1285 /* volume_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083622E18D4045500BD1285 /* volume_Icon.png */; };
+		0083623118D4096600BD1285 /* music-icon1_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083623018D4096600BD1285 /* music-icon1_on.png */; };
+		0083623318D4F8D900BD1285 /* navi_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083623218D4F8D900BD1285 /* navi_location.png */; };
+		0083623518D4FA5400BD1285 /* navi_rev.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083623418D4FA5400BD1285 /* navi_rev.png */; };
+		0083623718D4FAE800BD1285 /* volume_rev.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083623618D4FAE800BD1285 /* volume_rev.png */; };
+		0083623918D4FBBF00BD1285 /* volume_rev_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083623818D4FBBF00BD1285 /* volume_rev_1.png */; };
+		0083623B18D5094B00BD1285 /* navi-icon_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083623A18D5094B00BD1285 /* navi-icon_on.png */; };
+		0083624018D5314300BD1285 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0083623F18D5314300BD1285 /* MediaPlayer.framework */; };
+		0083624218D5314B00BD1285 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0083624118D5314B00BD1285 /* CFNetwork.framework */; };
+		0083624818D5738F00BD1285 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083624718D5738F00BD1285 /* AudioStreamer.m */; };
+		0083624B18D62C5300BD1285 /* RadioControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083624A18D62C5300BD1285 /* RadioControlView.m */; };
+		0083624D18D647AC00BD1285 /* abc.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083624C18D647AC00BD1285 /* abc.png */; };
+		00A2FEE018D64E0400D1A220 /* Paradise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00A2FEDF18D64E0400D1A220 /* Paradise.jpg */; };
+		00B4589E192D47CE009BE685 /* gradient_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4589D192D47CE009BE685 /* gradient_bottom.png */; };
+		00B458A0192D4B8A009BE685 /* gradient_tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4589F192D4B8A009BE685 /* gradient_tab.png */; };
+		00B8E93D1934CBA70031C0EA /* map-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8E93C1934CBA70031C0EA /* map-icon.png */; };
+		00B8E93F1934D6780031C0EA /* add_location-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8E93E1934D6780031C0EA /* add_location-icon.png */; };
+		00B8E9431934D9880031C0EA /* navi-icon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8E9421934D9880031C0EA /* navi-icon_2.png */; };
+		00B8E9451934DD800031C0EA /* delete_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8E9441934DD7F0031C0EA /* delete_location.png */; };
+		00FB747118C9207D006CC61A /* SongControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB747018C9207D006CC61A /* SongControlView.m */; };
+		00FB747418C924D4006CC61A /* VolumeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB747318C924D4006CC61A /* VolumeControlView.m */; };
+		00FB747618C9338F006CC61A /* images-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00FB747518C9338F006CC61A /* images-1.jpg */; };
+		00FB747818C93408006CC61A /* images-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00FB747718C93408006CC61A /* images-2.jpg */; };
+		00FCDFA218C304B800320808 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FCDFA118C304B800320808 /* Foundation.framework */; };
+		00FCDFA418C304B800320808 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FCDFA318C304B800320808 /* CoreGraphics.framework */; };
+		00FCDFA618C304B800320808 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FCDFA518C304B800320808 /* UIKit.framework */; };
+		00FCDFAC18C304B800320808 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00FCDFAA18C304B800320808 /* InfoPlist.strings */; };
+		00FCDFAE18C304B800320808 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDFAD18C304B800320808 /* main.m */; };
+		00FCDFB218C304B800320808 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDFB118C304B800320808 /* AppDelegate.m */; };
+		00FCDFBA18C304B800320808 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00FCDFB918C304B800320808 /* Images.xcassets */; };
+		00FCDFC118C304B800320808 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FCDFC018C304B800320808 /* XCTest.framework */; };
+		00FCDFC218C304B800320808 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FCDFA118C304B800320808 /* Foundation.framework */; };
+		00FCDFC318C304B800320808 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FCDFA518C304B800320808 /* UIKit.framework */; };
+		00FCDFCB18C304B800320808 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00FCDFC918C304B800320808 /* InfoPlist.strings */; };
+		00FCDFCD18C304B800320808 /* MultiTouch_Car_InterfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDFCC18C304B800320808 /* MultiTouch_Car_InterfaceTests.m */; };
+		00FCDFD818C3068900320808 /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDFD718C3068900320808 /* MusicViewController.m */; };
+		00FCDFDB18C5BA1B00320808 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDFDA18C5BA1B00320808 /* HomeViewController.m */; };
+		00FCDFDE18C6221D00320808 /* MDCircleGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDFDD18C6221D00320808 /* MDCircleGestureRecognizer.m */; };
+		00FCDFE118C656E000320808 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDFE018C656E000320808 /* MainView.m */; };
+		00FCDFE518C680A400320808 /* music-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FCDFE418C680A400320808 /* music-icon.png */; };
+		00FCDFE718C682CF00320808 /* volume.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FCDFE618C682CF00320808 /* volume.png */; };
+		00FCDFE918C6D45100320808 /* music-icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FCDFE818C6D45100320808 /* music-icon1.png */; };
+		00FCDFEB18C6DB3F00320808 /* climate-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FCDFEA18C6DB3F00320808 /* climate-icon.png */; };
+		00FCDFED18C6DE3000320808 /* navi-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FCDFEC18C6DE3000320808 /* navi-icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00FCDFC418C304B800320808 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00FCDF9618C304B800320808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00FCDF9D18C304B800320808;
+			remoteInfo = "MultiTouch Car Interface";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0003BB5018C84B78005BD464 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0003BB5218C84C35005BD464 /* Climate Control.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Climate Control.m4a"; sourceTree = "<group>"; };
+		0003BB5318C84C35005BD464 /* Music Control.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Music Control.m4a"; sourceTree = "<group>"; };
+		0003BB5418C84CED005BD464 /* Music Control.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Music Control.mp3"; sourceTree = "<group>"; };
+		0003BB5618C84E62005BD464 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		00069B43192E9DCF00707E95 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		000BDADD18C964F5003AE3FD /* MusicSourceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSourceView.h; sourceTree = "<group>"; };
+		000BDADE18C964F5003AE3FD /* MusicSourceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSourceView.m; sourceTree = "<group>"; };
+		000BDAE218C971F1003AE3FD /* source.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = source.mp3; sourceTree = "<group>"; };
+		000BDAE318C971F1003AE3FD /* volume.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = volume.mp3; sourceTree = "<group>"; };
+		000BDAF818D20D0A003AE3FD /* NaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviViewController.h; sourceTree = "<group>"; };
+		000BDAF918D20D0A003AE3FD /* NaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviViewController.m; sourceTree = "<group>"; };
+		000BDAFF18D24E41003AE3FD /* music_volume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_volume.png; sourceTree = "<group>"; };
+		001122841933A58000E18F19 /* music-icon_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-icon_on_2.png"; sourceTree = "<group>"; };
+		001122861933B05700E18F19 /* volume-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-icon.png"; sourceTree = "<group>"; };
+		001122881933B10700E18F19 /* volume-icon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-icon_1.png"; sourceTree = "<group>"; };
+		0011228A1933B3CE00E18F19 /* song-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "song-icon.png"; sourceTree = "<group>"; };
+		0011228C1933B59E00E18F19 /* music-icon3_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-icon3_on.png"; sourceTree = "<group>"; };
+		0011228E1933CEE400E18F19 /* radio-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-icon.png"; sourceTree = "<group>"; };
+		0031704C18D93CEB00138EDC /* volume_rev_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume_rev_2.png; sourceTree = "<group>"; };
+		0031704E18D9486A00138EDC /* DrawViewForVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewForVolume.h; sourceTree = "<group>"; };
+		0031704F18D9486A00138EDC /* DrawViewForVolume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewForVolume.m; sourceTree = "<group>"; };
+		0031705118D954A100138EDC /* album2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = album2.jpg; sourceTree = "<group>"; };
+		0031705318D954AA00138EDC /* album1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = album1.jpg; sourceTree = "<group>"; };
+		0031705518D9557500138EDC /* album3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = album3.jpg; sourceTree = "<group>"; };
+		00417EA518F6562900A39714 /* ItunesLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItunesLibraryController.h; sourceTree = "<group>"; };
+		00417EA618F6562900A39714 /* ItunesLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItunesLibraryController.m; sourceTree = "<group>"; };
+		00417EA818F65B7D00A39714 /* ItunesSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItunesSelectViewController.h; sourceTree = "<group>"; };
+		00417EA918F65B7D00A39714 /* ItunesSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItunesSelectViewController.m; sourceTree = "<group>"; };
+		00417EAB18F662C100A39714 /* ItunesPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ItunesPrefs.plist; sourceTree = "<group>"; };
+		004FB95C18C9056000DE113C /* music-icon1 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-icon1 copy.png"; sourceTree = "<group>"; };
+		004FB96018C9060E00DE113C /* music-icon2 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-icon2 copy.png"; sourceTree = "<group>"; };
+		0050969B19361BE200C3ADB7 /* radioWave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radioWave.png; sourceTree = "<group>"; };
+		0054838F18E537020017F37C /* drawProcessViewForSongControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drawProcessViewForSongControl.h; sourceTree = "<group>"; };
+		0054839018E537020017F37C /* drawProcessViewForSongControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawProcessViewForSongControl.m; sourceTree = "<group>"; };
+		0083622218D2A55F00BD1285 /* ProcessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessView.h; sourceTree = "<group>"; };
+		0083622318D2A55F00BD1285 /* ProcessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessView.m; sourceTree = "<group>"; };
+		0083622518D2D32100BD1285 /* blur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blur.jpg; sourceTree = "<group>"; };
+		0083622718D2D6AB00BD1285 /* blur_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blur_1.jpg; sourceTree = "<group>"; };
+		0083622918D2D79900BD1285 /* blur_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blur_2.jpg; sourceTree = "<group>"; };
+		0083622B18D3F38900BD1285 /* TabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarView.h; sourceTree = "<group>"; };
+		0083622C18D3F38900BD1285 /* TabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarView.m; sourceTree = "<group>"; };
+		0083622E18D4045500BD1285 /* volume_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume_Icon.png; sourceTree = "<group>"; };
+		0083623018D4096600BD1285 /* music-icon1_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-icon1_on.png"; sourceTree = "<group>"; };
+		0083623218D4F8D900BD1285 /* navi_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi_location.png; sourceTree = "<group>"; };
+		0083623418D4FA5400BD1285 /* navi_rev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi_rev.png; sourceTree = "<group>"; };
+		0083623618D4FAE800BD1285 /* volume_rev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume_rev.png; sourceTree = "<group>"; };
+		0083623818D4FBBF00BD1285 /* volume_rev_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume_rev_1.png; sourceTree = "<group>"; };
+		0083623A18D5094B00BD1285 /* navi-icon_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi-icon_on.png"; sourceTree = "<group>"; };
+		0083623F18D5314300BD1285 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		0083624118D5314B00BD1285 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0083624618D5738F00BD1285 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
+		0083624718D5738F00BD1285 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
+		0083624918D62C5300BD1285 /* RadioControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioControlView.h; sourceTree = "<group>"; };
+		0083624A18D62C5300BD1285 /* RadioControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioControlView.m; sourceTree = "<group>"; };
+		0083624C18D647AC00BD1285 /* abc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abc.png; sourceTree = "<group>"; };
+		00A2FEDF18D64E0400D1A220 /* Paradise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paradise.jpg; sourceTree = "<group>"; };
+		00B4589D192D47CE009BE685 /* gradient_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient_bottom.png; sourceTree = "<group>"; };
+		00B4589F192D4B8A009BE685 /* gradient_tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient_tab.png; sourceTree = "<group>"; };
+		00B8E93C1934CBA70031C0EA /* map-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-icon.png"; sourceTree = "<group>"; };
+		00B8E93E1934D6780031C0EA /* add_location-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_location-icon.png"; sourceTree = "<group>"; };
+		00B8E9421934D9880031C0EA /* navi-icon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi-icon_2.png"; sourceTree = "<group>"; };
+		00B8E9441934DD7F0031C0EA /* delete_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_location.png; sourceTree = "<group>"; };
+		00FB746F18C9207D006CC61A /* SongControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongControlView.h; sourceTree = "<group>"; };
+		00FB747018C9207D006CC61A /* SongControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongControlView.m; sourceTree = "<group>"; };
+		00FB747218C924D4006CC61A /* VolumeControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VolumeControlView.h; path = ../VolumeControlView.h; sourceTree = "<group>"; };
+		00FB747318C924D4006CC61A /* VolumeControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VolumeControlView.m; path = ../VolumeControlView.m; sourceTree = "<group>"; };
+		00FB747518C9338F006CC61A /* images-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-1.jpg"; sourceTree = "<group>"; };
+		00FB747718C93408006CC61A /* images-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-2.jpg"; sourceTree = "<group>"; };
+		00FCDF9E18C304B800320808 /* MultiTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00FCDFA118C304B800320808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00FCDFA318C304B800320808 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		00FCDFA518C304B800320808 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		00FCDFA918C304B800320808 /* MultiTouch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultiTouch-Info.plist"; sourceTree = "<group>"; };
+		00FCDFAB18C304B800320808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00FCDFAD18C304B800320808 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00FCDFAF18C304B800320808 /* MultiTouch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiTouch-Prefix.pch"; sourceTree = "<group>"; };
+		00FCDFB018C304B800320808 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		00FCDFB118C304B800320808 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		00FCDFB918C304B800320808 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		00FCDFBF18C304B800320808 /* MultiTouchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiTouchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00FCDFC018C304B800320808 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		00FCDFC818C304B800320808 /* MultiTouch Car InterfaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultiTouch Car InterfaceTests-Info.plist"; sourceTree = "<group>"; };
+		00FCDFCA18C304B800320808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00FCDFCC18C304B800320808 /* MultiTouch_Car_InterfaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTouch_Car_InterfaceTests.m; sourceTree = "<group>"; };
+		00FCDFD618C3068900320808 /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicViewController.h; path = ../MusicViewController.h; sourceTree = "<group>"; };
+		00FCDFD718C3068900320808 /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicViewController.m; path = ../MusicViewController.m; sourceTree = "<group>"; };
+		00FCDFD918C5BA1B00320808 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		00FCDFDA18C5BA1B00320808 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		00FCDFDC18C6221D00320808 /* MDCircleGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCircleGestureRecognizer.h; sourceTree = "<group>"; };
+		00FCDFDD18C6221D00320808 /* MDCircleGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCircleGestureRecognizer.m; sourceTree = "<group>"; };
+		00FCDFDF18C656E000320808 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		00FCDFE018C656E000320808 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		00FCDFE418C680A400320808 /* music-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-icon.png"; sourceTree = "<group>"; };
+		00FCDFE618C682CF00320808 /* volume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume.png; sourceTree = "<group>"; };
+		00FCDFE818C6D45100320808 /* music-icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-icon1.png"; sourceTree = "<group>"; };
+		00FCDFEA18C6DB3F00320808 /* climate-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "climate-icon.png"; sourceTree = "<group>"; };
+		00FCDFEC18C6DE3000320808 /* navi-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi-icon.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00FCDF9B18C304B800320808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0083624018D5314300BD1285 /* MediaPlayer.framework in Frameworks */,
+				0083624218D5314B00BD1285 /* CFNetwork.framework in Frameworks */,
+				0003BB5718C84E62005BD464 /* AudioToolbox.framework in Frameworks */,
+				0003BB5118C84B78005BD464 /* AVFoundation.framework in Frameworks */,
+				00FCDFA418C304B800320808 /* CoreGraphics.framework in Frameworks */,
+				00FCDFA618C304B800320808 /* UIKit.framework in Frameworks */,
+				00FCDFA218C304B800320808 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00FCDFBC18C304B800320808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00FCDFC118C304B800320808 /* XCTest.framework in Frameworks */,
+				00FCDFC318C304B800320808 /* UIKit.framework in Frameworks */,
+				00FCDFC218C304B800320808 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000BDAFE18D20D28003AE3FD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				00FCDFD618C3068900320808 /* MusicViewController.h */,
+				00FCDFD718C3068900320808 /* MusicViewController.m */,
+				000BDAF818D20D0A003AE3FD /* NaviViewController.h */,
+				000BDAF918D20D0A003AE3FD /* NaviViewController.m */,
+				00417EA518F6562900A39714 /* ItunesLibraryController.h */,
+				00417EA618F6562900A39714 /* ItunesLibraryController.m */,
+				00417EA818F65B7D00A39714 /* ItunesSelectViewController.h */,
+				00417EA918F65B7D00A39714 /* ItunesSelectViewController.m */,
+				00FCDFD918C5BA1B00320808 /* HomeViewController.h */,
+				00FCDFDA18C5BA1B00320808 /* HomeViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		009533CB1A95B92600B90383 /* Help Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0083624718D5738F00BD1285 /* AudioStreamer.m */,
+				0083624618D5738F00BD1285 /* AudioStreamer.h */,
+				00FCDFDC18C6221D00320808 /* MDCircleGestureRecognizer.h */,
+				00FCDFDD18C6221D00320808 /* MDCircleGestureRecognizer.m */,
+			);
+			name = "Help Classes";
+			sourceTree = "<group>";
+		};
+		00FB746E18C91953006CC61A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0083622B18D3F38900BD1285 /* TabBarView.h */,
+				0083622C18D3F38900BD1285 /* TabBarView.m */,
+				00FCDFDF18C656E000320808 /* MainView.h */,
+				00FCDFE018C656E000320808 /* MainView.m */,
+				0031704E18D9486A00138EDC /* DrawViewForVolume.h */,
+				0031704F18D9486A00138EDC /* DrawViewForVolume.m */,
+				00FB747218C924D4006CC61A /* VolumeControlView.h */,
+				00FB747318C924D4006CC61A /* VolumeControlView.m */,
+				0054838F18E537020017F37C /* drawProcessViewForSongControl.h */,
+				0054839018E537020017F37C /* drawProcessViewForSongControl.m */,
+				00FB746F18C9207D006CC61A /* SongControlView.h */,
+				00FB747018C9207D006CC61A /* SongControlView.m */,
+				000BDADD18C964F5003AE3FD /* MusicSourceView.h */,
+				000BDADE18C964F5003AE3FD /* MusicSourceView.m */,
+				0083624918D62C5300BD1285 /* RadioControlView.h */,
+				0083624A18D62C5300BD1285 /* RadioControlView.m */,
+				0083622218D2A55F00BD1285 /* ProcessView.h */,
+				0083622318D2A55F00BD1285 /* ProcessView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		00FCDF9518C304B800320808 = {
+			isa = PBXGroup;
+			children = (
+				00FCDFA718C304B800320808 /* MultiTouch Car Interface */,
+				00FCDFC618C304B800320808 /* MultiTouch Car InterfaceTests */,
+				00FCDFA018C304B800320808 /* Frameworks */,
+				00FCDF9F18C304B800320808 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00FCDF9F18C304B800320808 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00FCDF9E18C304B800320808 /* MultiTouch.app */,
+				00FCDFBF18C304B800320808 /* MultiTouchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00FCDFA018C304B800320808 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0083624118D5314B00BD1285 /* CFNetwork.framework */,
+				0083623F18D5314300BD1285 /* MediaPlayer.framework */,
+				0003BB5618C84E62005BD464 /* AudioToolbox.framework */,
+				0003BB5018C84B78005BD464 /* AVFoundation.framework */,
+				00FCDFA118C304B800320808 /* Foundation.framework */,
+				00FCDFA318C304B800320808 /* CoreGraphics.framework */,
+				00FCDFA518C304B800320808 /* UIKit.framework */,
+				00FCDFC018C304B800320808 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00FCDFA718C304B800320808 /* MultiTouch Car Interface */ = {
+			isa = PBXGroup;
+			children = (
+				00069B43192E9DCF00707E95 /* Main.storyboard */,
+				00FB746E18C91953006CC61A /* Views */,
+				000BDAFE18D20D28003AE3FD /* Controllers */,
+				009533CB1A95B92600B90383 /* Help Classes */,
+				00FCDFB018C304B800320808 /* AppDelegate.h */,
+				00FCDFB118C304B800320808 /* AppDelegate.m */,
+				00FCDFB918C304B800320808 /* Images.xcassets */,
+				00FCDFA818C304B800320808 /* Supporting Files */,
+			);
+			path = "MultiTouch Car Interface";
+			sourceTree = "<group>";
+		};
+		00FCDFA818C304B800320808 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0050969B19361BE200C3ADB7 /* radioWave.png */,
+				00B8E9441934DD7F0031C0EA /* delete_location.png */,
+				00B8E9421934D9880031C0EA /* navi-icon_2.png */,
+				00B8E93E1934D6780031C0EA /* add_location-icon.png */,
+				00B8E93C1934CBA70031C0EA /* map-icon.png */,
+				0011228E1933CEE400E18F19 /* radio-icon.png */,
+				0011228A1933B3CE00E18F19 /* song-icon.png */,
+				001122841933A58000E18F19 /* music-icon_on_2.png */,
+				00B4589D192D47CE009BE685 /* gradient_bottom.png */,
+				0083623818D4FBBF00BD1285 /* volume_rev_1.png */,
+				00B4589F192D4B8A009BE685 /* gradient_tab.png */,
+				00A2FEDF18D64E0400D1A220 /* Paradise.jpg */,
+				0083624C18D647AC00BD1285 /* abc.png */,
+				0031705518D9557500138EDC /* album3.jpg */,
+				0083623618D4FAE800BD1285 /* volume_rev.png */,
+				0031704C18D93CEB00138EDC /* volume_rev_2.png */,
+				0083623A18D5094B00BD1285 /* navi-icon_on.png */,
+				001122861933B05700E18F19 /* volume-icon.png */,
+				0083623418D4FA5400BD1285 /* navi_rev.png */,
+				0083623218D4F8D900BD1285 /* navi_location.png */,
+				0083622518D2D32100BD1285 /* blur.jpg */,
+				0083622918D2D79900BD1285 /* blur_2.jpg */,
+				0083622E18D4045500BD1285 /* volume_Icon.png */,
+				0083622718D2D6AB00BD1285 /* blur_1.jpg */,
+				00FCDFE818C6D45100320808 /* music-icon1.png */,
+				00FCDFEC18C6DE3000320808 /* navi-icon.png */,
+				000BDAFF18D24E41003AE3FD /* music_volume.png */,
+				0083623018D4096600BD1285 /* music-icon1_on.png */,
+				001122881933B10700E18F19 /* volume-icon_1.png */,
+				00FB747718C93408006CC61A /* images-2.jpg */,
+				00FB747518C9338F006CC61A /* images-1.jpg */,
+				00FCDFA918C304B800320808 /* MultiTouch-Info.plist */,
+				000BDAE218C971F1003AE3FD /* source.mp3 */,
+				000BDAE318C971F1003AE3FD /* volume.mp3 */,
+				0003BB5218C84C35005BD464 /* Climate Control.m4a */,
+				0003BB5318C84C35005BD464 /* Music Control.m4a */,
+				004FB96018C9060E00DE113C /* music-icon2 copy.png */,
+				00FCDFEA18C6DB3F00320808 /* climate-icon.png */,
+				0003BB5418C84CED005BD464 /* Music Control.mp3 */,
+				0031705318D954AA00138EDC /* album1.jpg */,
+				0031705118D954A100138EDC /* album2.jpg */,
+				004FB95C18C9056000DE113C /* music-icon1 copy.png */,
+				0011228C1933B59E00E18F19 /* music-icon3_on.png */,
+				00FCDFE418C680A400320808 /* music-icon.png */,
+				00FCDFAA18C304B800320808 /* InfoPlist.strings */,
+				00FCDFE618C682CF00320808 /* volume.png */,
+				00FCDFAD18C304B800320808 /* main.m */,
+				00FCDFAF18C304B800320808 /* MultiTouch-Prefix.pch */,
+				00417EAB18F662C100A39714 /* ItunesPrefs.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00FCDFC618C304B800320808 /* MultiTouch Car InterfaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				00FCDFCC18C304B800320808 /* MultiTouch_Car_InterfaceTests.m */,
+				00FCDFC718C304B800320808 /* Supporting Files */,
+			);
+			path = "MultiTouch Car InterfaceTests";
+			sourceTree = "<group>";
+		};
+		00FCDFC718C304B800320808 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00FCDFC818C304B800320808 /* MultiTouch Car InterfaceTests-Info.plist */,
+				00FCDFC918C304B800320808 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00FCDF9D18C304B800320808 /* MultiTouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00FCDFD018C304B800320808 /* Build configuration list for PBXNativeTarget "MultiTouch" */;
+			buildPhases = (
+				00FCDF9A18C304B800320808 /* Sources */,
+				00FCDF9B18C304B800320808 /* Frameworks */,
+				00FCDF9C18C304B800320808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiTouch;
+			productName = "MultiTouch Car Interface";
+			productReference = 00FCDF9E18C304B800320808 /* MultiTouch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00FCDFBE18C304B800320808 /* MultiTouchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00FCDFD318C304B800320808 /* Build configuration list for PBXNativeTarget "MultiTouchTests" */;
+			buildPhases = (
+				00FCDFBB18C304B800320808 /* Sources */,
+				00FCDFBC18C304B800320808 /* Frameworks */,
+				00FCDFBD18C304B800320808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00FCDFC518C304B800320808 /* PBXTargetDependency */,
+			);
+			name = MultiTouchTests;
+			productName = "MultiTouch Car InterfaceTests";
+			productReference = 00FCDFBF18C304B800320808 /* MultiTouchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00FCDF9618C304B800320808 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Shawn Wu";
+				TargetAttributes = {
+					00FCDF9D18C304B800320808 = {
+						DevelopmentTeam = LLD75X66LG;
+					};
+					00FCDFBE18C304B800320808 = {
+						TestTargetID = 00FCDF9D18C304B800320808;
+					};
+				};
+			};
+			buildConfigurationList = 00FCDF9918C304B800320808 /* Build configuration list for PBXProject "MultiTouch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00FCDF9518C304B800320808;
+			productRefGroup = 00FCDF9F18C304B800320808 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00FCDF9D18C304B800320808 /* MultiTouch */,
+				00FCDFBE18C304B800320808 /* MultiTouchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00FCDF9C18C304B800320808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0031705618D9557500138EDC /* album3.jpg in Resources */,
+				001122851933A58000E18F19 /* music-icon_on_2.png in Resources */,
+				00A2FEE018D64E0400D1A220 /* Paradise.jpg in Resources */,
+				0083624D18D647AC00BD1285 /* abc.png in Resources */,
+				00FCDFEB18C6DB3F00320808 /* climate-icon.png in Resources */,
+				00FCDFE918C6D45100320808 /* music-icon1.png in Resources */,
+				0083623318D4F8D900BD1285 /* navi_location.png in Resources */,
+				00FCDFE518C680A400320808 /* music-icon.png in Resources */,
+				00FCDFBA18C304B800320808 /* Images.xcassets in Resources */,
+				00FCDFED18C6DE3000320808 /* navi-icon.png in Resources */,
+				001122891933B10700E18F19 /* volume-icon_1.png in Resources */,
+				0011228D1933B59E00E18F19 /* music-icon3_on.png in Resources */,
+				00B4589E192D47CE009BE685 /* gradient_bottom.png in Resources */,
+				0083623518D4FA5400BD1285 /* navi_rev.png in Resources */,
+				0083622818D2D6AB00BD1285 /* blur_1.jpg in Resources */,
+				000BDAE518C971F1003AE3FD /* volume.mp3 in Resources */,
+				00B8E9451934DD800031C0EA /* delete_location.png in Resources */,
+				0031705418D954AA00138EDC /* album1.jpg in Resources */,
+				00FCDFAC18C304B800320808 /* InfoPlist.strings in Resources */,
+				00FB747618C9338F006CC61A /* images-1.jpg in Resources */,
+				0011228F1933CEE400E18F19 /* radio-icon.png in Resources */,
+				000BDB0018D24E41003AE3FD /* music_volume.png in Resources */,
+				00069B44192E9DCF00707E95 /* Main.storyboard in Resources */,
+				0003BB5518C84CED005BD464 /* Music Control.mp3 in Resources */,
+				0011228B1933B3CE00E18F19 /* song-icon.png in Resources */,
+				0083622A18D2D79900BD1285 /* blur_2.jpg in Resources */,
+				000BDAE418C971F1003AE3FD /* source.mp3 in Resources */,
+				00B458A0192D4B8A009BE685 /* gradient_tab.png in Resources */,
+				001122871933B05700E18F19 /* volume-icon.png in Resources */,
+				0083623918D4FBBF00BD1285 /* volume_rev_1.png in Resources */,
+				0050969C19361BE200C3ADB7 /* radioWave.png in Resources */,
+				0083623718D4FAE800BD1285 /* volume_rev.png in Resources */,
+				0083623B18D5094B00BD1285 /* navi-icon_on.png in Resources */,
+				00B8E9431934D9880031C0EA /* navi-icon_2.png in Resources */,
+				0031704D18D93CEB00138EDC /* volume_rev_2.png in Resources */,
+				0083622F18D4045500BD1285 /* volume_Icon.png in Resources */,
+				004FB96118C9060E00DE113C /* music-icon2 copy.png in Resources */,
+				0083622618D2D32100BD1285 /* blur.jpg in Resources */,
+				004FB95D18C9056000DE113C /* music-icon1 copy.png in Resources */,
+				00417EAC18F662C100A39714 /* ItunesPrefs.plist in Resources */,
+				00B8E93D1934CBA70031C0EA /* map-icon.png in Resources */,
+				0031705218D954A100138EDC /* album2.jpg in Resources */,
+				0083623118D4096600BD1285 /* music-icon1_on.png in Resources */,
+				00FB747818C93408006CC61A /* images-2.jpg in Resources */,
+				00FCDFE718C682CF00320808 /* volume.png in Resources */,
+				00B8E93F1934D6780031C0EA /* add_location-icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00FCDFBD18C304B800320808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00FCDFCB18C304B800320808 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00FCDF9A18C304B800320808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00417EA718F6562900A39714 /* ItunesLibraryController.m in Sources */,
+				00FCDFB218C304B800320808 /* AppDelegate.m in Sources */,
+				00FCDFD818C3068900320808 /* MusicViewController.m in Sources */,
+				00FB747418C924D4006CC61A /* VolumeControlView.m in Sources */,
+				000BDAFA18D20D0A003AE3FD /* NaviViewController.m in Sources */,
+				00FCDFDE18C6221D00320808 /* MDCircleGestureRecognizer.m in Sources */,
+				0083622418D2A55F00BD1285 /* ProcessView.m in Sources */,
+				00FCDFAE18C304B800320808 /* main.m in Sources */,
+				0083624B18D62C5300BD1285 /* RadioControlView.m in Sources */,
+				00FCDFDB18C5BA1B00320808 /* HomeViewController.m in Sources */,
+				0054839118E537020017F37C /* drawProcessViewForSongControl.m in Sources */,
+				0083622D18D3F38900BD1285 /* TabBarView.m in Sources */,
+				0083624818D5738F00BD1285 /* AudioStreamer.m in Sources */,
+				00FB747118C9207D006CC61A /* SongControlView.m in Sources */,
+				00FCDFE118C656E000320808 /* MainView.m in Sources */,
+				000BDADF18C964F5003AE3FD /* MusicSourceView.m in Sources */,
+				00417EAA18F65B7D00A39714 /* ItunesSelectViewController.m in Sources */,
+				0031705018D9486A00138EDC /* DrawViewForVolume.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00FCDFBB18C304B800320808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00FCDFCD18C304B800320808 /* MultiTouch_Car_InterfaceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00FCDFC518C304B800320808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00FCDF9D18C304B800320808 /* MultiTouch */;
+			targetProxy = 00FCDFC418C304B800320808 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00FCDFAA18C304B800320808 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00FCDFAB18C304B800320808 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		00FCDFC918C304B800320808 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00FCDFCA18C304B800320808 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00FCDFCE18C304B800320808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 小龙 Wu (FN84FLTG5U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 小龙 Wu (FN84FLTG5U)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "700D7A4D-2647-40D1-BB01-FF149056647F";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		00FCDFCF18C304B800320808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 小龙 Wu (FN84FLTG5U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 小龙 Wu (FN84FLTG5U)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "700D7A4D-2647-40D1-BB01-FF149056647F";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00FCDFD118C304B800320808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiTouch Car Interface/MultiTouch-Prefix.pch";
+				INFOPLIST_FILE = "MultiTouch Car Interface/MultiTouch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = MultiTouch;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		00FCDFD218C304B800320808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiTouch Car Interface/MultiTouch-Prefix.pch";
+				INFOPLIST_FILE = "MultiTouch Car Interface/MultiTouch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = MultiTouch;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		00FCDFD418C304B800320808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MultiTouch Car Interface.app/MultiTouch Car Interface";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiTouch Car Interface/MultiTouch Car Interface-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MultiTouch Car InterfaceTests/MultiTouch Car InterfaceTests-Info.plist";
+				PRODUCT_NAME = MultiTouchTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		00FCDFD518C304B800320808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MultiTouch Car Interface.app/MultiTouch Car Interface";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiTouch Car Interface/MultiTouch Car Interface-Prefix.pch";
+				INFOPLIST_FILE = "MultiTouch Car InterfaceTests/MultiTouch Car InterfaceTests-Info.plist";
+				PRODUCT_NAME = MultiTouchTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00FCDF9918C304B800320808 /* Build configuration list for PBXProject "MultiTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00FCDFCE18C304B800320808 /* Debug */,
+				00FCDFCF18C304B800320808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00FCDFD018C304B800320808 /* Build configuration list for PBXNativeTarget "MultiTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00FCDFD118C304B800320808 /* Debug */,
+				00FCDFD218C304B800320808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00FCDFD318C304B800320808 /* Build configuration list for PBXNativeTarget "MultiTouchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00FCDFD418C304B800320808 /* Debug */,
+				00FCDFD518C304B800320808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00FCDF9618C304B800320808 /* Project object */;
+}
