@@ -84,7 +84,7 @@
 - (void)drawRect:(CGRect)rect
 {
     
-   }
+}
 
 -(void)setMusicView:(UIView *)musicView
 {

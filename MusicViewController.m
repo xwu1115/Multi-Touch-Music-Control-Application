@@ -17,6 +17,7 @@
 #import <CFNetwork/CFNetwork.h>
 #import "AudioStreamer.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "RatingControlView.h"
 
 @interface MusicViewController ()
 
@@ -31,7 +32,7 @@
 @property VolumeControlView *volumeControlView;
 @property MusicSourceView *musicSourceView;
 @property RadioControlView *radioControlView;
-
+@property RatingControlView *ratingControlView;
 @property TabBarView *tabBarView;
 
 @property NSMutableArray *views;
@@ -103,6 +104,9 @@
     self.musicSourceView = [[MusicSourceView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
     self.musicSourceView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
     
+    self.ratingControlView = [[RatingControlView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
+    self.ratingControlView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
+    
     self.views = [NSMutableArray array];
     
     self.tempViews = [NSMutableArray array];
@@ -110,6 +114,7 @@
     [self.tempViews addObject:self.volumeControlView];
     [self.tempViews addObject:self.songControlView];
     [self.tempViews addObject:self.musicSourceView];
+    [self.tempViews addObject:self.ratingControlView];
 
     //add shadow and round corner to the views
     [self setupViews];

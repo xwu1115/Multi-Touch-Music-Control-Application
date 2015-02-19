@@ -51,6 +51,7 @@
 		0083624818D5738F00BD1285 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083624718D5738F00BD1285 /* AudioStreamer.m */; };
 		0083624B18D62C5300BD1285 /* RadioControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083624A18D62C5300BD1285 /* RadioControlView.m */; };
 		0083624D18D647AC00BD1285 /* abc.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083624C18D647AC00BD1285 /* abc.png */; };
+		009533CE1A95BBFA00B90383 /* RatingControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009533CD1A95BBFA00B90383 /* RatingControlView.m */; };
 		00A2FEE018D64E0400D1A220 /* Paradise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00A2FEDF18D64E0400D1A220 /* Paradise.jpg */; };
 		00B4589E192D47CE009BE685 /* gradient_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4589D192D47CE009BE685 /* gradient_bottom.png */; };
 		00B458A0192D4B8A009BE685 /* gradient_tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4589F192D4B8A009BE685 /* gradient_tab.png */; };
@@ -152,6 +153,8 @@
 		0083624918D62C5300BD1285 /* RadioControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioControlView.h; sourceTree = "<group>"; };
 		0083624A18D62C5300BD1285 /* RadioControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioControlView.m; sourceTree = "<group>"; };
 		0083624C18D647AC00BD1285 /* abc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abc.png; sourceTree = "<group>"; };
+		009533CC1A95BBFA00B90383 /* RatingControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingControlView.h; sourceTree = "<group>"; };
+		009533CD1A95BBFA00B90383 /* RatingControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingControlView.m; sourceTree = "<group>"; };
 		00A2FEDF18D64E0400D1A220 /* Paradise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paradise.jpg; sourceTree = "<group>"; };
 		00B4589D192D47CE009BE685 /* gradient_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient_bottom.png; sourceTree = "<group>"; };
 		00B4589F192D4B8A009BE685 /* gradient_tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient_tab.png; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				0083624A18D62C5300BD1285 /* RadioControlView.m */,
 				0083622218D2A55F00BD1285 /* ProcessView.h */,
 				0083622318D2A55F00BD1285 /* ProcessView.m */,
+				009533CC1A95BBFA00B90383 /* RatingControlView.h */,
+				009533CD1A95BBFA00B90383 /* RatingControlView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				0054839118E537020017F37C /* drawProcessViewForSongControl.m in Sources */,
 				0083622D18D3F38900BD1285 /* TabBarView.m in Sources */,
 				0083624818D5738F00BD1285 /* AudioStreamer.m in Sources */,
+				009533CE1A95BBFA00B90383 /* RatingControlView.m in Sources */,
 				00FB747118C9207D006CC61A /* SongControlView.m in Sources */,
 				00FCDFE118C656E000320808 /* MainView.m in Sources */,
 				000BDADF18C964F5003AE3FD /* MusicSourceView.m in Sources */,

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicViewController.m"
-            timestampString = "422913870.337313"
+            timestampString = "446021008.858335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "547"
-            endingLineNumber = "547"
-            landmarkName = "-handleSwipe:"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
+            landmarkName = "-handle_NowPlayingItemChanged:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicViewController.m"
-            timestampString = "422893460.825023"
+            timestampString = "446021008.858335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-setupGestures"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,13 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicViewController.m"
-            timestampString = "422989624.597562"
+            timestampString = "446021008.858335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "882"
-            endingLineNumber = "882"
-            landmarkName = "-checkViewIndex"
-            landmarkType = "5">
+            startingLineNumber = "887"
+            endingLineNumber = "887">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicViewController.m"
-            timestampString = "422859300.57323"
+            timestampString = "446021008.858335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -128,6 +126,22 @@
             startingLineNumber = "309"
             endingLineNumber = "309"
             landmarkName = "-handleSwipe:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MultiTouch Car Interface/RatingControlView.m"
+            timestampString = "446022240.6125"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-handleSwipeGestureRecognized:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
