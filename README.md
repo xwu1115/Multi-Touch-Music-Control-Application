@@ -1,2 +1,2 @@
 # Multi-Touch-Music-Control-Application
-This project aims for utilizing multi-touch gestures to control iTunes music on the ipad for drivers. 
+This project aims for utilizing multi-touch gestures to control iTunes music on ipad for drivers. 
