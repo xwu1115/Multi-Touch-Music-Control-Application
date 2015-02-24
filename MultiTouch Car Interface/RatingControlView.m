@@ -15,12 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeGestureRecognized:)];
-        swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-        UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeGestureRecognized:)];
-        swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
-        [self addGestureRecognizer:swipeUp];
-        [self addGestureRecognizer:swipeDown];
+        [self setupGestures];
         
     }
     return self;
@@ -29,6 +24,16 @@
 - (void)drawRect:(CGRect)rect
 {
     
+}
+
+-(void)setupGestures{
+    
+    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeGestureRecognized:)];
+    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeGestureRecognized:)];
+    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [self addGestureRecognizer:swipeUp];
+    [self addGestureRecognizer:swipeDown];
 }
 
 -(void)handleSwipeGestureRecognized:(UISwipeGestureRecognizer *)rec{
