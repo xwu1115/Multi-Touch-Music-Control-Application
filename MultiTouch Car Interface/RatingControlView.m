@@ -12,7 +12,7 @@
 #define LABEL_HEIGHT 100
 
 @implementation RatingControlView
-@synthesize ratingImageArray,currentRating = _currentRating, RatingViewPath,ratingLabel;
+@synthesize ratingImageArray,currentRating = _currentRating, RatingViewPath,ratingLabel, playedTimes, playTimesLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,11 +24,16 @@
         ratingLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:100.];
         ratingLabel.text = @"0";
         [self addSubview:ratingLabel];
-        UILabel *contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(450, 140, 500, 60)];
+        UILabel *contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(450, 120, 500, 60)];
         contentLabel.text = @"Current Rating";
         contentLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:50.0f];
         contentLabel.textColor = [UIColor whiteColor];
         [self addSubview:contentLabel];
+        playTimesLabel = [[UILabel alloc]initWithFrame:CGRectMake(450, 320, 500, 60)];
+        playTimesLabel.text = [NSString stringWithFormat:@"Played times : %@", playedTimes];
+        playTimesLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:40.0f];
+        playTimesLabel.textColor = [UIColor whiteColor];
+        [self addSubview:playTimesLabel];
         UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeGestureRecognized:)];
         [swipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
         [self addGestureRecognizer:swipeDown];
@@ -49,6 +54,7 @@
 -(void)setCurrentRating:(int)currentRating{
     if (currentRating < 5 && currentRating >= 0) {
         _currentRating = currentRating;
+        playTimesLabel.text = [NSString stringWithFormat:@"Played times : %@", playedTimes];
         [self setNeedsDisplay];
     }
 }

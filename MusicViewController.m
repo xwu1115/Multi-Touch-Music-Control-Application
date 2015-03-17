@@ -255,9 +255,7 @@
             if (self.currentViewIndex < [self.views count]-1)
             {
                 CGRect currentFrame = CGRectMake(42 - 1*960, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
-                
                 CGRect nextFrame = CGRectMake(42, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
-                
                 [UIView animateWithDuration:0.5
                                       delay:0
                                     options: UIViewAnimationCurveEaseInOut
@@ -335,6 +333,9 @@
                     self.viewMoveDirection = 1;
                 }
             }
+            ratingControlView.playedTimes = [[musicPlayer nowPlayingItem]valueForKey:MPMediaItemPropertyPlayCount];
+            [ratingControlView setCurrentRating:[[(NSString *)[musicPlayer nowPlayingItem]valueForKey:MPMediaItemPropertyRating]intValue]];
+            
             //[self.musicPlayer play];
             CGRect currentFrame = ((UIImageView *)[currentSongControlView.containerView.subviews objectAtIndex:self.musicIndex]).frame;
             currentFrame = CGRectMake(currentFrame.origin.x, 0, currentFrame.size.width, currentFrame.size.height);
@@ -610,6 +611,9 @@
     
     [musicPlayer beginGeneratingPlaybackNotifications];
     [NSTimer scheduledTimerWithTimeInterval:1.0/60.0 target:self selector:@selector(updateTime:) userInfo:nil repeats:YES];
+    
+    ratingControlView.playedTimes = [[musicPlayer nowPlayingItem]valueForKey:MPMediaItemPropertyPlayCount];
+    [ratingControlView setCurrentRating:[[(NSString *)[musicPlayer nowPlayingItem]valueForKey:MPMediaItemPropertyRating]intValue]];
 }
 
 #pragma mark delegate method

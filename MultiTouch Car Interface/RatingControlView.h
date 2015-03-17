@@ -17,6 +17,8 @@
 @property NSMutableArray *ratingImageArray;
 @property UIBezierPath *RatingViewPath;
 @property UILabel *ratingLabel;
+@property UILabel *playTimesLabel;
+@property NSString *playedTimes;
 @property id<RatingDelegate>delegate;
 -(void)updateViewAccordingToRating;
 @end
