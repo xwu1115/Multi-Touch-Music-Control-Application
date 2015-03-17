@@ -28,11 +28,13 @@
 @property int viewMoveDirection;
 @property BOOL whetherIsSwipe;
 @property int notifyTimes;
+
 @property SongControlView *songControlView;
 @property VolumeControlView *volumeControlView;
 @property MusicSourceView *musicSourceView;
 @property RadioControlView *radioControlView;
 @property RatingControlView *ratingControlView;
+
 @property TabBarView *tabBarView;
 
 @property NSMutableArray *views;
@@ -59,7 +61,7 @@
 @end
 
 @implementation MusicViewController
-
+@synthesize songControlView, volumeControlView, musicSourceView, radioControlView, ratingControlView, subItemIconArray, tempViews, views, currentViewIndex, musicIndex, currentVolume, musicPlayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -86,7 +88,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor colorWithRed:60/255.0 green:52/255.0 blue:52/255.0 alpha:1];
-
+    
     //create view for drawing
     self.volumeControlView = [[VolumeControlView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
     self.volumeControlView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
@@ -97,59 +99,39 @@
     [self.progressView setTintColor:[UIColor colorWithRed:91.0/255.0 green:202.0/255.0 blue:92.0/255.0 alpha:1]];
     [self.volumeControlView addSubview:self.progressView];
     
-    self.songControlView = [[SongControlView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
-    self.songControlView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
-    self.songControlView.delegate = self;
+    songControlView = [[SongControlView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
+    songControlView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
+    songControlView.delegate = self;
     
-    self.musicSourceView = [[MusicSourceView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
-    self.musicSourceView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
+    musicSourceView = [[MusicSourceView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
+    musicSourceView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
     
-    self.ratingControlView = [[RatingControlView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
-    self.ratingControlView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
+    ratingControlView = [[RatingControlView alloc]initWithFrame:CGRectMake(0, 0, 940, 500)];
+    ratingControlView.backgroundColor = [UIColor colorWithRed:56/255.0 green:53/255.0 blue:53/255.0 alpha:1];
+    ratingControlView.delegate = self;
     
-    self.views = [NSMutableArray array];
+    views = [NSMutableArray array];
+    tempViews = [NSMutableArray array];
     
-    self.tempViews = [NSMutableArray array];
-    
-    [self.tempViews addObject:self.volumeControlView];
-    [self.tempViews addObject:self.songControlView];
-    [self.tempViews addObject:self.musicSourceView];
-    [self.tempViews addObject:self.ratingControlView];
-
+    [tempViews addObject:volumeControlView];
+    [tempViews addObject:songControlView];
+    [tempViews addObject:ratingControlView];
+    [tempViews addObject:musicSourceView];
     //add shadow and round corner to the views
     [self setupViews];
     
-    self.currentVolume = 10.0;
+    currentVolume = 10.0;
+    currentViewIndex = 0;
+    musicIndex = 0;
     
-    self.currentViewIndex = 0;
-    self.musicIndex = 0;
+    [self setupPlayer];
     
-    self.musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
-    
-    NSSet *predicateSet = [NSSet setWithObjects:nil];
-    MPMediaQuery *mediaTypeQuery = [MPMediaQuery songsQuery];
-    [self.musicPlayer setQueueWithQuery:mediaTypeQuery];
-   // NSLog(@"the query results are %@", mediaTypeQuery);
-    self.musicPlayer.repeatMode = MPMusicRepeatModeAll;
-    [self.musicPlayer play];
-    
-    [self.volumeControlView.author setText:[self.songControlView.authorArray objectAtIndex:self.musicIndex]];
-    [self.volumeControlView.songName setText: [self.songControlView.songNameArray objectAtIndex:self.musicIndex]];
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver: self
-     selector:    @selector (handle_NowPlayingItemChanged:)
-     name:        MPMusicPlayerControllerNowPlayingItemDidChangeNotification
-     object:     self.musicPlayer];
-    
-    [self.musicPlayer beginGeneratingPlaybackNotifications];
-    
-    [NSTimer scheduledTimerWithTimeInterval:1.0/60.0 target:self selector:@selector(updateTime:) userInfo:nil repeats:YES];
+    [volumeControlView.author setText:[self.songControlView.authorArray objectAtIndex:self.musicIndex]];
+    [volumeControlView.songName setText: [self.songControlView.songNameArray objectAtIndex:self.musicIndex]];
     
    	// Do any additional setup after loading the view.
-    
     [self setupGestures];
-
+    
     self.indicator = [self loadWav:((MainView *)[self.tempViews objectAtIndex:self.currentViewIndex]).songFileURL] ;
     [self.indicator play];
     
@@ -162,15 +144,15 @@
     self.whetherIsSwipe = NO;
     self.notifyTimes = 0;
     
-    self.subItemIconArray = [NSMutableArray array];
-    [self.subItemIconArray addObject:self.volumeIcon];
-    [self.subItemIconArray addObject:self.songIcon];
-    [self.subItemIconArray addObject:self.radioIcon];
+    subItemIconArray = [NSMutableArray array];
+    [subItemIconArray addObject:self.volumeIcon];
+    [subItemIconArray addObject:self.songIcon];
+    [subItemIconArray addObject:self.radioIcon];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-
+    
     CAKeyframeAnimation * anim1 = [ CAKeyframeAnimation animationWithKeyPath:@"transform" ] ;
     anim1.values = @[ [ NSValue valueWithCATransform3D:CATransform3DMakeScale(0.2f, 0.2f, 1.0f)], [ NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0f, 1.0f, 1.0f) ]];
     anim1.autoreverses = NO;
@@ -183,12 +165,11 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-   
+    
     
 }
 
 -(void)setupGestures{
-    
     UISwipeGestureRecognizer *swipeGestureLeft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipe:)];
     UISwipeGestureRecognizer *swipeGestureRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipe:)];
     UISwipeGestureRecognizer *swipeGestureUp = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipe:)];
@@ -196,16 +177,12 @@
     
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(handlePinch:)];
     
-//    MDCircleGestureRecognizer *circleGesture = [[MDCircleGestureRecognizer alloc]init];
-//    [circleGesture addTarget:self action:@selector(handleCircle:)];
-    
     [swipeGestureRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [swipeGestureLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [swipeGestureUp setDirection:UISwipeGestureRecognizerDirectionUp];
     [swipeGestureDown setDirection:UISwipeGestureRecognizerDirectionDown];
     
     //[self.view addGestureRecognizer:circleGesture];
-    
     [self.view addGestureRecognizer:swipeGestureLeft];
     [self.view addGestureRecognizer:swipeGestureRight];
     [self.view addGestureRecognizer:swipeGestureUp];
@@ -221,7 +198,6 @@
     
     int currentIndex = 0;
     for (id view in self.tempViews) {
-        
         /* still neew round corner*/
         ((UIView *)view).layer.shouldRasterize = YES;
         ((UIView *)view).layer.cornerRadius = 6;
@@ -245,10 +221,8 @@
 }
 
 - (void)updateTime:(NSTimer *)timer{
-    
     [self.progressView setProgress:(self.musicPlayer.currentPlaybackTime/[[self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyPlaybackDuration]doubleValue])];
     self.songControlView.musicProgress = (self.musicPlayer.currentPlaybackTime/[[self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyPlaybackDuration]doubleValue]);
-    
     //set the roundprogress bar on the songControlView..
 }
 
@@ -257,9 +231,7 @@
     for (id view in self.tempViews) {
         
         if ([view isKindOfClass:[VolumeControlView class]]) {
-            
             VolumeControlView *currentView = view;
-            
             UIImageView * ablumView = [[UIImageView alloc]initWithImage:ablumImage];
             ablumView.frame = CGRectMake(0, 0, 940, 500);
             
@@ -279,76 +251,76 @@
 - (void)handleSwipe:(UISwipeGestureRecognizer *)gesture
 {
     if (gesture.direction==UISwipeGestureRecognizerDirectionLeft||gesture.direction==UISwipeGestureRecognizerDirectionRight) {
-            if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
-                if (self.currentViewIndex < [self.views count]-1)
-                {
-                    CGRect currentFrame = CGRectMake(42 - 1*960, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
-                    
-                    CGRect nextFrame = CGRectMake(42, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
-                    
-                    [UIView animateWithDuration:0.5
-                                          delay:0
-                                        options: UIViewAnimationCurveEaseInOut
-                                     animations:^{
-                                         self.currentViewIndex ++;
-                                         [self checkViewIndex];
-                                         ((UIView *)[self.views objectAtIndex:self.currentViewIndex-1]).frame = currentFrame;
-                                         ((UIView *)[self.views objectAtIndex:(self.currentViewIndex)]).frame = nextFrame;
-                                         
-                                     }
-                                     completion:^(BOOL finished){
-                                         self.indicator = [self loadWav:((MainView *)[((UIView *)[self.views objectAtIndex:(self.currentViewIndex)]).subviews lastObject]).songFileURL] ;
-                                         [self.indicator play];
-                                     }];
-                }
-                else{
-                    CATransition* transition = [CATransition animation];
-                    transition.duration = 0.6;
-                    transition.type = kCATransitionFade;
-                    //transition.subtype = kCATransitionFromRight;
-                    [self.view.window.layer addAnimation:transition forKey:kCATransition];
-                    
-                    [self.tabBarController setSelectedIndex:2];
-                }
+        if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
+            if (self.currentViewIndex < [self.views count]-1)
+            {
+                CGRect currentFrame = CGRectMake(42 - 1*960, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
+                
+                CGRect nextFrame = CGRectMake(42, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
+                
+                [UIView animateWithDuration:0.5
+                                      delay:0
+                                    options: UIViewAnimationCurveEaseInOut
+                                 animations:^{
+                                     self.currentViewIndex ++;
+                                     [self checkViewIndex];
+                                     ((UIView *)[self.views objectAtIndex:self.currentViewIndex-1]).frame = currentFrame;
+                                     ((UIView *)[self.views objectAtIndex:(self.currentViewIndex)]).frame = nextFrame;
+                                     
+                                 }
+                                 completion:^(BOOL finished){
+                                     self.indicator = [self loadWav:((MainView *)[((UIView *)[self.views objectAtIndex:(self.currentViewIndex)]).subviews lastObject]).songFileURL] ;
+                                     [self.indicator play];
+                                 }];
             }
-            
-            if (gesture.direction == UISwipeGestureRecognizerDirectionRight) {
-                if (self.currentViewIndex > 0)
-                {
-                    CGRect currentFrame = CGRectMake(42 + 1*960, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
-                    CGRect nextFrame = CGRectMake(42, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
-                    [UIView animateWithDuration:0.5
-                                          delay:0
-                                        options: UIViewAnimationCurveEaseInOut
-                                     animations:^{
-                                         self.currentViewIndex --;
-                                         [self checkViewIndex];
-                                         ((UIView *)[self.views objectAtIndex:self.currentViewIndex+1]).frame = currentFrame;
-                                         ((UIView *)[self.views objectAtIndex:(self.currentViewIndex)]).frame = nextFrame;
-                                     }
-                                     completion:^(BOOL finished){
-                                         self.indicator = [self loadWav:((MainView *)[((UIView *)[self.views objectAtIndex:(self.currentViewIndex)]).subviews lastObject]).songFileURL] ;
-                                         [self.indicator play];
-                                     }];
-                }
-                else{
-                }
+            else{
+                CATransition* transition = [CATransition animation];
+                transition.duration = 0.6;
+                transition.type = kCATransitionFade;
+                //transition.subtype = kCATransitionFromRight;
+                [self.view.window.layer addAnimation:transition forKey:kCATransition];
+                
+                [self.tabBarController setSelectedIndex:2];
+            }
+        }
+        
+        if (gesture.direction == UISwipeGestureRecognizerDirectionRight) {
+            if (self.currentViewIndex > 0)
+            {
+                CGRect currentFrame = CGRectMake(42 + 1*960, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
+                CGRect nextFrame = CGRectMake(42, 40, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.width, ((UIView *)[self.views objectAtIndex:self.currentViewIndex]).frame.size.height);
+                [UIView animateWithDuration:0.5
+                                      delay:0
+                                    options: UIViewAnimationCurveEaseInOut
+                                 animations:^{
+                                     self.currentViewIndex --;
+                                     [self checkViewIndex];
+                                     ((UIView *)[self.views objectAtIndex:self.currentViewIndex+1]).frame = currentFrame;
+                                     ((UIView *)[self.views objectAtIndex:(self.currentViewIndex)]).frame = nextFrame;
+                                 }
+                                 completion:^(BOOL finished){
+                                     self.indicator = [self loadWav:((MainView *)[((UIView *)[self.views objectAtIndex:(self.currentViewIndex)]).subviews lastObject]).songFileURL] ;
+                                     [self.indicator play];
+                                 }];
+            }
+            else{
+            }
         }
     }
     
     if (gesture.direction == UISwipeGestureRecognizerDirectionUp||gesture.direction == UISwipeGestureRecognizerDirectionDown)
     {
-       //if it's in the songControl view..
+        //if it's in the songControl view..
         self.whetherIsSwipe = YES;
         
         if ([[self.tempViews objectAtIndex:self.currentViewIndex] isKindOfClass:[SongControlView class]])
         {
-           //[self.musicPlayer stop];
+            //[self.musicPlayer stop];
             SongControlView *currentSongControlView = [self.tempViews objectAtIndex:self.currentViewIndex];
             int previousIndex = self.musicIndex;
-             CGRect nextFrame = ((UIImageView *)[currentSongControlView.containerView.subviews objectAtIndex:self.musicIndex]).frame;
-             self.viewMoveDirection = 0;
-             if (gesture.direction == UISwipeGestureRecognizerDirectionUp) {
+            CGRect nextFrame = ((UIImageView *)[currentSongControlView.containerView.subviews objectAtIndex:self.musicIndex]).frame;
+            self.viewMoveDirection = 0;
+            if (gesture.direction == UISwipeGestureRecognizerDirectionUp) {
                 if (self.musicIndex < [currentSongControlView.albumImages count]-1) {
                     self.musicIndex++;
                     [self.musicPlayer skipToNextItem];
@@ -397,7 +369,7 @@
                                                       self.songControlView.author.alpha = 1;
                                                   }
                                                   completion:nil];
-                                // NSLog(@"the index is %d", self.musicIndex);
+                                 // NSLog(@"the index is %d", self.musicIndex);
                                  self.whetherIsSwipe = NO;
                              }];
         }
@@ -406,7 +378,7 @@
             self.songControlView.isRadio = 1-1*self.songControlView.isRadio;
             [self.musicSourceView setupStatus:self.songControlView.isRadio];
         }
-    
+        
         //if it's in the radioCcontrol view..
         if ([[self.tempViews objectAtIndex:self.currentViewIndex]isKindOfClass:[RadioControlView class]]) {
         }
@@ -419,7 +391,7 @@
 
 -(void)handlePinch:(UIGestureRecognizer *)gesture
 {
-   // NSLog(@"the current scale is %f",((UIPinchGestureRecognizer *)gesture).scale);
+    // NSLog(@"the current scale is %f",((UIPinchGestureRecognizer *)gesture).scale);
     //set the value on the screen
     if (((UIPinchGestureRecognizer *)gesture).scale != 0) {
         self.currentVolume  = ((UIPinchGestureRecognizer *)gesture).scale * 100 * self.musicPlayer.volume ;
@@ -487,9 +459,9 @@
                 [self.streamer stop];
                 self.streamer = nil;
                 [self.musicPlayer play];
-             }
-         }
-     }
+            }
+        }
+    }
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
@@ -521,7 +493,7 @@
 - (void)createStreamerWith:(NSString *)radioStreamingUrl
 {
     NSString *downloadSourceField= radioStreamingUrl;
-	NSString *escapedValue =
+    NSString *escapedValue =
     (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
                                                                           nil,
                                                                           (CFStringRef)downloadSourceField,
@@ -529,8 +501,8 @@
                                                                           NULL,
                                                                           kCFStringEncodingUTF8))
     ;
-	NSURL *url = [NSURL URLWithString:escapedValue];
-	self.streamer = [[AudioStreamer alloc] initWithURL:url];
+    NSURL *url = [NSURL URLWithString:escapedValue];
+    self.streamer = [[AudioStreamer alloc] initWithURL:url];
     
     [self.streamer start];
 }
@@ -564,23 +536,20 @@
                              self.songControlView.author.alpha = 0;
                          }
                          completion:^(BOOL finished){
-                           
                              self.musicIndex++;
-                             
                              [self.songControlView.songName setText: [self.songControlView.songNameArray objectAtIndex:self.musicIndex]];
                              [self.songControlView.author setText:[self.songControlView.authorArray objectAtIndex:self.musicIndex]];
-                             
                              [self.volumeControlView.author setText:[self.songControlView.authorArray objectAtIndex:self.musicIndex]];
                              [self.volumeControlView.songName setText: [self.songControlView.songNameArray objectAtIndex:self.musicIndex]];
                              
                              [UIView animateWithDuration:0.5
-                                    delay:0
-                                    options: UIViewAnimationCurveEaseInOut
-                                    animations:^{
-                                         self.songControlView.songName.alpha = 1;
-                                         self.songControlView.author.alpha = 1;
-                         }
-                            completion:nil];
+                                                   delay:0
+                                                 options: UIViewAnimationCurveEaseInOut
+                                              animations:^{
+                                                  self.songControlView.songName.alpha = 1;
+                                                  self.songControlView.author.alpha = 1;
+                                              }
+                                              completion:nil];
                              [self setMusicForVolumeView:[self.songControlView.albumImages objectAtIndex:self.musicIndex] withContent:@""];
                          }];
     }
@@ -603,7 +572,7 @@
                                         options: UIViewAnimationCurveEaseInOut
                                      animations:^{
                                          view.alpha = 0.3;
-                                                }
+                                     }
                                      completion:nil];
                 }
             }
@@ -622,5 +591,40 @@
             }
         }
     }
+}
+
+-(void)setupPlayer
+{
+    musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+    NSSet *predicateSet = [NSSet setWithObjects:nil];
+    MPMediaQuery *mediaTypeQuery = [MPMediaQuery songsQuery];
+    [self.musicPlayer setQueueWithQuery:mediaTypeQuery];
+    // NSLog(@"the query results are %@", mediaTypeQuery);
+    musicPlayer.repeatMode = MPMusicRepeatModeAll;
+    [musicPlayer play];
+    [[NSNotificationCenter defaultCenter]
+     addObserver: self
+     selector:    @selector (handle_NowPlayingItemChanged:)
+     name:        MPMusicPlayerControllerNowPlayingItemDidChangeNotification
+     object:      musicPlayer];
+    
+    [musicPlayer beginGeneratingPlaybackNotifications];
+    [NSTimer scheduledTimerWithTimeInterval:1.0/60.0 target:self selector:@selector(updateTime:) userInfo:nil repeats:YES];
+}
+
+#pragma mark delegate method
+
+-(void)changeRatingWith:(UISwipeGestureRecognizer *)rec AndView:(RatingControlView *)v
+{
+    NSLog(@"%@",[[musicPlayer nowPlayingItem]valueForKey:MPMediaItemPropertyRating]);
+    int rating = [[(NSString *)[musicPlayer nowPlayingItem]valueForKey:MPMediaItemPropertyRating]intValue];
+    if (rec.direction == UISwipeGestureRecognizerDirectionUp) {
+        rating++;
+    }else{
+        rating--;
+    }
+    [v setCurrentRating:rating];
+    [[musicPlayer nowPlayingItem]setValue:[NSNumber numberWithInt:v.currentRating] forKey:MPMediaItemPropertyRating];
+    NSLog(@"%@",[[musicPlayer nowPlayingItem]valueForKey:MPMediaItemPropertyRating]);
 }
 @end
